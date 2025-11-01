@@ -1,0 +1,20 @@
+.skill {
+    border: 1px solid rgba(245, 245, 245, 0.7);
+    width: 180px;
+    flex: 1;
+    transition: transform 0.2s;
+
+    &__logo {
+        height: 50px;
+        width: 50px;
+
+        & img {
+            height: inherit;
+            width: inherit;
+        }
+    }
+
+    &:hover {
+        transform: translatey(-2px);
+    }
+}

@@ -1,0 +1,14 @@
+#introduction,
+#certificates {
+    background: linear-gradient(rgba(245, 245, 245, 0.7), rgba(245, 245, 245, 0.7)), url('../images/background.png');
+}
+
+/* Override: If browser supports .webp */
+@supports (background-image: url('../../assets/images/background.webp')) {
+    #introduction,
+    #certificates {
+        background:
+            linear-gradient(rgba(245, 245, 245, 0.7), rgba(245, 245, 245, 0.7)),
+            url('../../assets/images/background.webp');
+    }
+}

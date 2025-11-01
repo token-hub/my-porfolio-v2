@@ -1,0 +1,41 @@
+// Colors
+$primary: #f1ac18;
+$primary-light: #f5c766;
+$secondary: #f25b0a;
+$tertiary: #79a33d;
+$default-bg: #f1f1f1;
+
+$body-bg: $default-bg;
+
+// Font
+$font-family-base: 'Sansation', sans-serif;
+
+// SPACES
+$spacer: 1rem !default;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 4,
+    7: $spacer * 6,
+    8: $spacer * 8,
+    9: $spacer * 12,
+    10: $spacer * 16
+) !default;
+
+$enable-negative-margins: true;
+
+$input-font-size: 0.9rem;
+
+// list group
+$list-group-bg: transparent;
+$list-group-border-color: transparent;
+
+// Position
+
+$position-values-percent: generate-position-values('%');
+$position-values-vh: generate-position-values('vh');
+$position-values-vw: generate-position-values('vw');

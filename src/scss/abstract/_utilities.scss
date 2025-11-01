@@ -1,0 +1,85 @@
+$utilities: map-merge(
+    $utilities,
+    (
+        'viewport-width': (
+            property: width,
+            class: vw,
+            values: $position-values-vw
+        ),
+        'max-width': (
+            property: max-width,
+            class: mw,
+            values: $position-values-percent
+        ),
+        'height': (
+            property: height,
+            class: h,
+            values: $position-values-percent
+        ),
+        'viewport-height': (
+            property: height,
+            class: vh,
+            values: $position-values-vh
+        ),
+        'min-viewport-height': (
+            property: min-height,
+            class: min-vh,
+            values: $position-values-vh
+        ),
+        'top': (
+            property: top,
+            values: $position-values-percent
+        ),
+        'bottom': (
+            property: bottom,
+            values: $position-values-percent
+        ),
+        'start': (
+            property: left,
+            class: start,
+            values: $position-values-percent
+        ),
+        'end': (
+            property: right,
+            class: end,
+            values: $position-values-percent
+        )
+    )
+);
+
+svg {
+    fill: var(--bs-primary);
+}
+
+.backToTop {
+    position: fixed;
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid var(--bs-primary);
+    background-color: white;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+    z-index: 100;
+    transition: all 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 15px 4rem rgba(0, 0, 0, 0.175) !important;
+    }
+}
+
+.hiddenAndPushedDown {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    margin-top: 5rem;
+}
+
+#about-me .container,
+#projects .container,
+#skills .container,
+#certificates .container,
+#contact-me .container {
+    transition: all 0.3s ease-in;
+}

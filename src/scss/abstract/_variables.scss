@@ -1,0 +1,30 @@
+// Colors
+$primary: #dfa340;
+
+// Font
+$font-family-base: 'Rubik', sans-serif;
+
+// SPACES
+$spacer: 1rem !default;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 4,
+    7: $spacer * 6,
+    8: $spacer * 8,
+    9: $spacer * 12,
+    10: $spacer * 16
+) !default;
+
+// NAVBAR
+$navbar-nav-link-padding-x: $spacer * 0.8; // padding x-axis
+$navbar-padding-y: $spacer * 1.1;
+$nav-link-font-size: $spacer * 1.1; // nav-links size
+
+$position-values-percent: generate-position-values('%');
+$position-values-vh: generate-position-values('vh');
+$position-values-vw: generate-position-values('vw');

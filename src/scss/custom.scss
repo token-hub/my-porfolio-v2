@@ -1,0 +1,192 @@
+.nav-item {
+    &:after {
+        content: '';
+        display: block;
+        width: 50%;
+        background-color: var(--bs-primary);
+        height: 2px;
+        border-radius: 50px;
+        margin: auto;
+        transition: all 0.2s;
+        visibility: hidden;
+
+        @media (max-width: 48rem) {
+            margin: initial;
+            width: 0;
+        }
+    }
+
+    &:hover:after {
+        visibility: visible;
+    }
+
+    .nav-link:hover {
+        color: var(--bs-primary);
+    }
+}
+
+.header-highlight {
+    display: block;
+    height: 4px;
+    width: 35px;
+    border-radius: 25px;
+    background-color: var(--bs-primary);
+}
+
+#introduction,
+#certificates {
+    background: linear-gradient(rgba(245, 245, 245, 0.7), rgba(245, 245, 245, 0.7)), url('../images/background.png');
+}
+
+/* Override: If browser supports .webp */
+@supports (background-image: url('../images/background.webp')) {
+    #introduction,
+    #certificates {
+        background:
+            linear-gradient(rgba(245, 245, 245, 0.7), rgba(245, 245, 245, 0.7)), url('../images/background.webp');
+    }
+}
+
+#introduction {
+    margin-top: 6rem; // to offset the space that is occupied by the header
+    height: 90vh;
+    @media (max-width: 992px) {
+        margin-top: 4.7rem; // high of expended navbar (75.19)/ default font size (16)
+    }
+}
+
+svg {
+    fill: var(--bs-primary);
+}
+
+#about-me .container,
+#projects .container,
+#skills .container,
+#certificates .container,
+#contact-me .container {
+    transition: all 0.3s ease-in;
+}
+
+.hiddenAndPushedDown {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    margin-top: 5rem;
+}
+
+.backToTop {
+    position: fixed;
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid var(--bs-primary);
+    background-color: white;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+    z-index: 100;
+    transition: all 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 15px 4rem rgba(0, 0, 0, 0.175) !important;
+    }
+}
+
+.project {
+    transition: all 0.3s;
+
+    .img-overlay {
+        position: absolute;
+        z-index: 3;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.08));
+        top: 0;
+        transition: all 0.3s;
+
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 15px 4rem rgba(0, 0, 0, 0.175) !important;
+
+        .img-overlay {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .project-icon {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    &-icon {
+        opacity: 0;
+        pointer-events: none;
+        visibility: none;
+
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        height: 40px;
+        width: 40px;
+        z-index: 5;
+        transition: all 0.3s;
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--bs-primary) !important;
+            transform: scale(1.1);
+        }
+
+        &:hover svg {
+            fill: white;
+        }
+    }
+}
+
+.skill {
+    border: 1px solid rgba(245, 245, 245, 0.7);
+    width: 180px;
+    flex: 1;
+    transition: transform 0.2s;
+
+    &__logo {
+        height: 50px;
+        width: 50px;
+
+        & img {
+            height: inherit;
+            width: inherit;
+        }
+    }
+
+    &:hover {
+        transform: translatey(-2px);
+    }
+}
+
+.certificate {
+    img {
+        width: 100%;
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    }
+}
+
+.certificate_toggler {
+    transition: all 0.3s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
