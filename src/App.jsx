@@ -3,6 +3,7 @@ import Introduction from './components/introduction';
 import AboutMe from './components/aboutMe';
 import Projects from './components/projects';
 import Skills from './components/skills';
+import Certificates from './components/certificates';
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <AboutMe />
             <Projects />
             <Skills />
+            <Certificates />
         </>
     );
 }

@@ -1,4 +1,19 @@
 .certificate {
+    width: 100%;
+    max-width: 100%;
+
+    @include media-breakpoint-up(md) {
+        max-width: 22rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-width: 20rem;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        max-width: 22rem;
+    }
+
     img {
         width: 100%;
         transition: transform 0.3s;
