@@ -1,7 +1,29 @@
+import { useEffect, useRef } from 'react';
 import me3d from '../assets/images/3dme.png';
 import me3dWebp from '../assets/images/3dme.webp';
 
 function Introduction() {
+    const blingkingRef = useRef();
+
+    useEffect(() => {
+        let intervalId;
+
+        function blingkingCursor() {
+            const targetElement = blingkingRef.current;
+            if (targetElement) {
+                intervalId = setInterval(() => {
+                    targetElement.classList.toggle('invisible');
+                }, 500);
+            }
+        }
+
+        blingkingCursor();
+
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, []);
+
     return (
         <section id="introduction" className="d-flex align-items-center justify-content-center">
             <div className="background" />
@@ -14,7 +36,9 @@ function Introduction() {
                     <h1 className="display-4 display-md-1 fw-semibold">Hello there! I am,</h1>
                     <div className="d-flex align-items-center" style={{ height: '2rem' }}>
                         <h1 className="display-5 display-md-1 text-primary animetedText" />
-                        <h1 className="blinking_cursor text-primary invisible">|</h1>
+                        <h1 ref={blingkingRef} className="blinking_cursor text-primary invisible">
+                            |
+                        </h1>
                     </div>
                 </div>
             </div>
