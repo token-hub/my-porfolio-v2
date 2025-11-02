@@ -1,44 +1,11 @@
-import JavascriptLogo from '../assets/images/skills/javascript.png';
-import HTML5Logo from '../assets/images/skills/html5.png';
-import CSS3Logo from '../assets/images/skills/css3.png';
-import SassLogo from '../assets/images/skills/sass.png';
-import WebpackLogo from '../assets/images/skills/webpack.png';
-import BootstrapLogo from '../assets/images/skills/bootstrap.png';
-import GitLogo from '../assets/images/skills/git.png';
-import GithubLogo from '../assets/images/skills/github.png';
-import ReactLogo from '../assets/images/skills/react.png';
-import ReduxLogo from '../assets/images/skills/redux.png';
-import TypescriptLogo from '../assets/images/skills/typescript.png';
-import NodejsLogo from '../assets/images/skills/nodejs.png';
-import MongodbLogo from '../assets/images/skills/mongodb.png';
-import MysqlLogo from '../assets/images/skills/mysql.png';
-import NginxLogo from '../assets/images/skills/nginx.png';
-import ExpressLogo from '../assets/images/skills/express.png';
-import NpmLogo from '../assets/images/skills/npm.png';
-
 import Skill from './skill';
+import { getSkills } from '../lib/skills';
+import { viewMore } from '../lib/animations';
 
-const skills = [
-    { image: JavascriptLogo, alt: 'Javascript Logo', skill: 'javascript' },
-    { image: HTML5Logo, alt: 'Html5 Logo', skill: 'html5' },
-    { image: CSS3Logo, alt: 'CSS3 Logo', skill: 'css3' },
-    { image: SassLogo, alt: 'Sass Logo', skill: 'sass' },
-    { image: WebpackLogo, alt: 'Webpack Logo', skill: 'webpack' },
-    { image: BootstrapLogo, alt: 'Bootstrap Logo', skill: 'bootstrap' },
-    { image: GithubLogo, alt: 'Github Logo', skill: 'github' },
-    { image: GitLogo, alt: 'Git Logo', skill: 'git' },
-    { image: ReactLogo, alt: 'React Logo', skill: 'react' },
-    { image: TypescriptLogo, alt: 'Typescript Logo', skill: 'typescript' },
-    { image: ReduxLogo, alt: 'Redux Logo', skill: 'redux' },
-    { image: NodejsLogo, alt: 'NodeJS Logo', skill: 'nodejs' },
-    { image: MongodbLogo, alt: 'Mongodb Logo', skill: 'mongodb' },
-    { image: MysqlLogo, alt: 'Mysql Logo', skill: 'mysql' },
-    { image: NginxLogo, alt: 'Nginx Logo', skill: 'nginx' },
-    { image: ExpressLogo, alt: 'Express Logo', skill: 'express' },
-    { image: NpmLogo, alt: 'Npm Logo', skill: 'npm' }
-];
+const skills = getSkills(6);
 
 function Skills() {
+    const hasViewMore = skills.some((p) => p.belongsToViewMore);
     return (
         <section id="skills" className="py-6 py-md-8">
             <div className="container hiddenAndPushedDown">
@@ -53,6 +20,19 @@ function Skills() {
                             {skills.map((skill) => {
                                 return <Skill key={skill.skill} {...skill} />;
                             })}
+
+                            <button
+                                id="skills-view-more"
+                                className={`project_toggler mt-5 fw-semibold text-primary bg-white p-3 rounded border border-primary ${
+                                    hasViewMore ? '' : 'd-none'
+                                }`}
+                                style={{ width: 150, margin: '0 auto' }}
+                                type="button"
+                                aria-label="Toggle project view more"
+                                onClick={() => viewMore('#skills-view-more', '.animated-skill.fade-slide')}
+                            >
+                                View more
+                            </button>
                         </div>
                     </div>
                 </div>
