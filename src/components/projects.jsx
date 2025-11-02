@@ -1,30 +1,11 @@
 import Project from './project';
-const projects = [
-    {
-        name: 'Project 1',
-        description:
-            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.'
-    },
-    {
-        name: 'Project 2',
-        description:
-            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.'
-    },
-    {
-        name: 'Project 3',
-        description:
-            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.'
-    },
-    {
-        name: 'Project 4',
-        description:
-            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.'
-    }
-];
+import { getProjects } from '../lib/projects';
+import { viewMore } from '../lib/animations';
+
+const projects = getProjects();
+
 function Projects() {
-    const hasMoreProjects = projects.length > 2;
-    const initialVisibleProjects = projects.slice(0, 2);
-    const moreProjects = projects.slice(2);
+    const hasViewMore = projects.some((p) => p.belongsToViewMore);
     return (
         <section id="projects" className="py-6 py-md-8 bg-light">
             <div className="container hiddenAndPushedDown">
@@ -47,49 +28,22 @@ function Projects() {
                     </p>
                 </div>
                 <div className="row">
-                    {initialVisibleProjects.map(({ name, description, image, imageWebp }) => {
-                        return (
-                            <Project
-                                key={name}
-                                name={name}
-                                description={description}
-                                image={image}
-                                imageWebp={imageWebp}
-                            />
-                        );
+                    {projects.map((project) => {
+                        return <Project key={project.name} {...project} />;
                     })}
 
-                    {hasMoreProjects && (
-                        <>
-                            <div id="moreProjects" className="d-sm-block collapse navbar-collapse">
-                                <div className="row">
-                                    {moreProjects.map(({ name, description, image, imageWebp }) => {
-                                        return (
-                                            <Project
-                                                key={name}
-                                                name={name}
-                                                description={description}
-                                                image={image}
-                                                imageWebp={imageWebp}
-                                            />
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                            <button
-                                className="navbar-toggler d-sm-none project_toggler mt-5 fw-semibold text-primary bg-white p-3 rounded border border-primary"
-                                style={{ width: 150, margin: '0 auto' }}
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#moreProjects"
-                                aria-controls="moreProjects"
-                                aria-expanded="false"
-                                aria-label="Toggle navigation"
-                            >
-                                View more
-                            </button>
-                        </>
-                    )}
+                    <button
+                        id="project-view-more"
+                        className={`project_toggler mt-5 fw-semibold text-primary bg-white p-3 rounded border border-primary ${
+                            hasViewMore ? '' : 'd-none'
+                        }`}
+                        style={{ width: 150, margin: '0 auto' }}
+                        type="button"
+                        aria-label="Toggle project view more"
+                        onClick={() => viewMore('#project-view-more', '.animated-project.fade-slide')}
+                    >
+                        View more
+                    </button>
                 </div>
             </div>
         </section>

@@ -91,3 +91,21 @@ export function sectionAnimation(selector) {
         observer.observe(section);
     });
 }
+
+export function viewMore(buttonSelector, elemSelector) {
+    const button = document.querySelector(buttonSelector);
+    const targetElements = document.querySelectorAll(elemSelector);
+    if (targetElements && button) {
+        targetElements.forEach((el) => {
+            if (el.classList.contains('d-none')) {
+                el.classList.remove('d-none');
+                setTimeout(() => el.classList.add('show'), 10);
+                button.textContent = 'View Less';
+            } else {
+                el.classList.remove('show');
+                el.addEventListener('transitionend', () => el.classList.add('d-none'), { once: true });
+                button.textContent = 'View More';
+            }
+        });
+    }
+}

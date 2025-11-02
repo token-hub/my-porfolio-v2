@@ -1,6 +1,12 @@
-function Project({ image = 'https://placehold.co/600x400', imageWebp, name = '', description = '' }) {
+function Project({
+    image = 'https://placehold.co/600x400',
+    imageWebp,
+    name = '',
+    description = '',
+    belongsToViewMore = false
+}) {
     return (
-        <div className="col-md-6">
+        <div className={`col-md-6 animated-project ${belongsToViewMore ? 'd-none fade-slide' : ''}`}>
             <div className="card project border-0 shadow-sm mb-4">
                 <div className="position-relative">
                     <picture>
