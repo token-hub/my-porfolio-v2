@@ -1,8 +1,7 @@
 function ContactMe() {
     return (
         <section id="contact-me" className="py-6 py-md-8 bg-white">
-            {/* <div className="container hiddenAndPushedDown"> */}
-            <div className="container ">
+            <div className="container hiddenAndPushedDown">
                 <div className="header pb-6 pb-md-7 d-flex justify-content-center flex-column align-items-center">
                     <h2 className="display-6 fw-normal">CONTACT ME</h2>
                     <span className="header-highlight" />

@@ -4,8 +4,7 @@ import { certificates } from '../lib/certificates';
 function Certificates() {
     return (
         <section id="certificates" className="py-6 py-md-8 bg-light">
-            {/* <div className="container hiddenAndPushedDown"> */}
-            <div className="container">
+            <div className="container hiddenAndPushedDown">
                 <div className="header pb-6 pb-md-7 d-flex justify-content-center flex-column align-items-center">
                     <h2 className="display-6 fw-normal">CERTIFICATES</h2>
                     <span className="header-highlight"></span>

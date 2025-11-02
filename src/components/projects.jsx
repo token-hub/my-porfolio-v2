@@ -27,8 +27,7 @@ function Projects() {
     const moreProjects = projects.slice(2);
     return (
         <section id="projects" className="py-6 py-md-8 bg-light">
-            {/* <div className="container hiddenAndPushedDown"> */}
-            <div className="container">
+            <div className="container hiddenAndPushedDown">
                 <div className="header pb-6 pb-md-7 d-flex justify-content-center flex-column align-items-center">
                     <h2 className="display-6 fw-normal">PROJECTS</h2>
                     <span className="header-highlight" />

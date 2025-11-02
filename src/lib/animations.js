@@ -67,3 +67,27 @@ export async function animatedTextEvent(targetElement, currentText = 'John Suyan
 
     return { forwardTimeoutId, backwardTimeoutId };
 }
+
+export function sectionAnimation(selector) {
+    const elements = document.querySelectorAll(`.${selector}`);
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove(selector);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: '50px'
+        }
+    );
+
+    if (!elements.length) return;
+
+    elements.forEach((section) => {
+        observer.observe(section);
+    });
+}

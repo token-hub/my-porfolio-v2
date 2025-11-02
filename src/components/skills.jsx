@@ -41,8 +41,7 @@ const skills = [
 function Skills() {
     return (
         <section id="skills" className="py-6 py-md-8">
-            {/* <div className="container hiddenAndPushedDown"> */}
-            <div className="container">
+            <div className="container hiddenAndPushedDown">
                 <div className="header pb-6 pb-md-7 d-flex justify-content-center flex-column align-items-center">
                     <h2 className="display-6 fw-normal">SKILLS</h2>
                     <span className="header-highlight" />
