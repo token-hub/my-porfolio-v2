@@ -23,6 +23,27 @@ const projects = [
     }
 ];
 
+const viewProjects = [
+    {
+        name: 'tastyfood',
+        displayName: 'tasty food',
+        image: 'https://placehold.co/600x400',
+        imageWebp: null,
+        badges: ['react', 'node js', 'mongodb', 'bootstrap', 'git', 'Amazon EC2', 'betterAuth', 'socket.io'],
+        liveDemoLink: 'http://google.com',
+        sourceCodeLink: 'http://google.com',
+        overview: [
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolor commodi voluptate nam repudiandae neque fuga aut minima recusandae reiciendis, iure dolorem, ipsa, nulla tempora quam doloribus quaerat minus quis.',
+            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolor commodi voluptate nam repudiandae neque fuga aut minima recusandae reiciendis, iure dolorem, ipsa, nulla tempora quam doloribus quaerat minus quis.'
+        ],
+        features: ['item', 'item', 'item', 'item', 'item', 'item']
+    }
+];
+
+export function getViewProjectDetails(projectName) {
+    return viewProjects.find((p) => p.name === projectName);
+}
+
 export function getProjects(defaultVisibleCount = 2) {
     let modifiedProjects = projects;
     const mediaQuery = window.matchMedia(`(max-width: ${BREAKPOINTS.sm})`);
