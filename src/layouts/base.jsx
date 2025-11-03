@@ -3,8 +3,9 @@ import Navbar from '../components/navbar';
 import BackToTop from '../components/backToTop';
 import { sectionAnimation } from '../lib/animations';
 import { useEffect } from 'react';
+import { Outlet } from 'react-router';
 
-function Base({ children }) {
+function Base() {
     useEffect(() => {
         sectionAnimation('hiddenAndPushedDown');
     }, []);
@@ -13,7 +14,7 @@ function Base({ children }) {
         <>
             <BackToTop />
             <Navbar />
-            {children}
+            <Outlet />
             <Footer />
         </>
     );
