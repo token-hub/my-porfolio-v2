@@ -1,0 +1,6 @@
+$theme-colors: map-merge(
+    (
+        'gray': $gray-700
+    ),
+    $theme-colors
+);

@@ -6,6 +6,9 @@
 @import '/node_modules/bootstrap/scss/functions';
 @import '/node_modules/bootstrap/scss/variables';
 
+// custom maps
+@import './abstract/maps';
+
 @import '/node_modules/bootstrap/scss/maps';
 @import '/node_modules/bootstrap/scss/utilities';
 
@@ -35,6 +38,7 @@
 @import '/node_modules/bootstrap/scss/navbar';
 @import '/node_modules/bootstrap/scss/images';
 @import '/node_modules/bootstrap/scss/transitions';
+@import '/node_modules/bootstrap/scss/badge';
 
 // helpers
 @import '/node_modules/bootstrap/scss/helpers';
@@ -49,3 +53,4 @@
 @import './components/nav';
 @import './components/project';
 @import './components/skill';
+@import './components/buttons';
