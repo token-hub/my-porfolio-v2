@@ -1,6 +1,12 @@
-function Certificate({ imageSmWebp, imageLgWebp, imageDefault, alt = 'image of online certificate' }) {
+function Certificate({
+    imageSmWebp,
+    imageLgWebp,
+    imageDefault,
+    alt = 'image of online certificate',
+    belongsToViewMore = false
+}) {
     return (
-        <div className="certificate mb-3">
+        <div className={`certificate mb-3 animated-certificate ${belongsToViewMore ? 'd-none fade-slide' : ''}`}>
             <a href={imageDefault} target="_blank">
                 <picture>
                     <source media="(max-width:576px)" srcSet={imageSmWebp} />

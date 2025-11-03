@@ -1,7 +1,11 @@
 import Certificate from './certificate';
-import { certificates } from '../lib/certificates';
+import { getCertificates } from '../lib/certificates';
+import { viewMore } from '../lib/animations';
+
+const certificates = getCertificates();
 
 function Certificates() {
+    const hasViewMore = certificates.some((p) => p.belongsToViewMore);
     return (
         <section id="certificates" className="py-6 py-md-8 bg-light">
             <div className="container hiddenAndPushedDown">
@@ -29,6 +33,18 @@ function Certificates() {
                         return <Certificate key={certificate.alt} {...certificate} />;
                     })}
                 </div>
+                <button
+                    id="certificates-view-more"
+                    className={`d-block certificate_toggler mt-5 fw-semibold text-primary bg-white p-3 rounded border border-primary ${
+                        hasViewMore ? '' : 'd-none'
+                    }`}
+                    style={{ width: 150, margin: '0 auto' }}
+                    type="button"
+                    aria-label="Toggle certificate view more"
+                    onClick={() => viewMore('#certificates-view-more', '.animated-certificate.fade-slide')}
+                >
+                    View more
+                </button>
             </div>
         </section>
     );

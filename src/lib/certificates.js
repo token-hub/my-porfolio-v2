@@ -1,3 +1,5 @@
+import { BREAKPOINTS } from './constants';
+
 import cert1 from '../assets/images/certificates/m220js-1.png';
 import cert1smWebp from '../assets/images/certificates/m220js-1-sm.webp';
 import cert1lgWebp from '../assets/images/certificates/m220js-1-lg.webp';
@@ -90,3 +92,31 @@ export const certificates = [
     },
     { imageSmWebp: cert1smWebp, imageLgWebp: cert1lgWebp, imageDefault: cert1, alt: 'mongodb for js developers' }
 ];
+
+export function getCertificates(defaultVisibleCountSm = 2, defaultVisibleCountMd = 6) {
+    let modifiedCerficates = certificates;
+    const mediaQuerySM = window.matchMedia(`(max-width: ${BREAKPOINTS.sm})`);
+    const mediaQueryMD = window.matchMedia(`(min-width: ${BREAKPOINTS.md})`);
+
+    if (mediaQuerySM.matches) {
+        modifiedCerficates = modifiedCerficates.map((certificate, index) => {
+            if (index > defaultVisibleCountSm - 1) {
+                return { ...certificate, belongsToViewMore: true };
+            } else {
+                return certificate;
+            }
+        });
+    }
+
+    if (mediaQueryMD.matches) {
+        modifiedCerficates = modifiedCerficates.map((certificate, index) => {
+            if (index > defaultVisibleCountMd - 1) {
+                return { ...certificate, belongsToViewMore: true };
+            } else {
+                return certificate;
+            }
+        });
+    }
+
+    return modifiedCerficates;
+}
