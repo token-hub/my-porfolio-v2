@@ -1,0 +1,31 @@
+.btn-primary {
+    @include button-variant(
+        $primary,
+        // background
+        $primary,
+        // border
+        white,
+        // text color
+        lighten($primary, 5%),
+        // hover background
+        lighten($primary, 10%),
+        // hover border
+        white,
+        // hover text color (force white)
+        darken($primary, 5%),
+        // active background
+        darken($primary, 10%),
+        // active border
+        white,
+        // active text color (force white)
+        $primary,
+        // disabled background
+        $primary,
+        // disabled border
+        white // disabled text color (force white)
+    );
+}
+
+.btn-outline-primary {
+    @include button-outline-variant($primary, white, lighten($primary, 5%), $primary);
+}
