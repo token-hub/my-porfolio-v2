@@ -1,5 +1,7 @@
+import { Link } from 'react-router';
 import blackAndWhiteMe from '../assets/images/black_and_white_me.jpg';
 import blackAndWhiteMeWebp from '../assets/images/black_and_white_me.webp';
+import resume from '../assets/PDFs/resume.pdf';
 
 function AboutMe() {
     return (
@@ -41,7 +43,9 @@ function AboutMe() {
                                 Vel cumque aperiam cum quisquam numquam cupiditate voluptatibus, obcaecati, doloremque
                                 repellat quia assumenda tempore quos distinctio.
                             </p>
-                            <button className="btn btn-lg btn-primary text-white w-100 mt-auto">Download Resume</button>
+                            <Link to={resume} download="JohnSuyangResume.pdf" target="_blank">
+                                <button className="btn btn-primary text-white w-100 mt-auto">Download Resume</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

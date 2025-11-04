@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 
 function Project({
-    image = 'https://placehold.co/600x400',
+    image = 'https://placehold.co/600x400?text=Coming+Soon',
     imageWebp = {
         sm: '',
         lg: ''
