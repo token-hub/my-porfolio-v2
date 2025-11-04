@@ -9,7 +9,7 @@ function Base() {
     const { hash, pathname } = useLocation();
 
     useEffect(() => {
-        sectionAnimation('hiddenAndPushedDown');
+        const observer = sectionAnimation('hiddenAndPushedDown');
         if (hash) {
             const element = document.querySelector(hash);
             if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -19,6 +19,12 @@ function Base() {
         if (pathname) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        return () => {
+            if (observer) {
+                observer.disconnect();
+            }
+        };
     }, [hash, pathname]);
 
     return (

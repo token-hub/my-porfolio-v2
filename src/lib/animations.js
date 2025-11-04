@@ -90,6 +90,8 @@ export function sectionAnimation(selector) {
     elements.forEach((section) => {
         observer.observe(section);
     });
+
+    return observer;
 }
 
 export function viewMore(buttonSelector, elemSelector) {
