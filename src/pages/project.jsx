@@ -43,8 +43,9 @@ function Project() {
 
                         <div className="col-md-7 my-5">
                             <picture>
-                                <source srcSet={imageWebp} />
-                                <img src={image} className="card-img-top" alt={name} />
+                                {imageWebp.sm && <source media="(max-width:576px)" srcSet={imageWebp.sm} />}
+                                {imageWebp.lg && <source media="(min-width:577px)" srcSet={imageWebp.lg} />}
+                                <img src={image} alt={name} className="rounded" />
                             </picture>
                         </div>
                     </div>

@@ -2,7 +2,10 @@ import { Link } from 'react-router';
 
 function Project({
     image = 'https://placehold.co/600x400',
-    imageWebp,
+    imageWebp = {
+        sm: '',
+        lg: ''
+    },
     name = '',
     description = '',
     belongsToViewMore = false,
@@ -14,8 +17,9 @@ function Project({
                 <div className="card project border-0 shadow-sm mb-4">
                     <div className="position-relative">
                         <picture>
-                            <source srcSet={imageWebp} />
-                            <img src={image} className="card-img-top" alt={name} />
+                            {imageWebp.sm && <source media="(max-width:576px)" srcSet={imageWebp.sm} />}
+                            {imageWebp.lg && <source media="(min-width:577px)" srcSet={imageWebp.lg} />}
+                            <img src={image} alt={name} className="card-img-top" />
                         </picture>
                     </div>
                     <div className="card-body">

@@ -1,28 +1,23 @@
 import { BREAKPOINTS } from './constants';
+import tastyFoodSMWebp from '../assets/images/tasty-food-mockup-all-sm.webp';
+import tastyFoodLGWebp from '../assets/images/tasty-food-mockup-all-lg.webp';
+import tastyFood from '../assets/images/tasty-food-lg-mockup.png';
 
 const projects = [
     {
         name: 'Tasty food',
         description:
             'A web application where people can look and share recipes they like, and have a fun conversation with the author of recipe in real time.',
-        viewProjectLink: '/tastyfood'
+        viewProjectLink: '/tastyfood',
+        image: tastyFood,
+        imageWebp: {
+            sm: '',
+            lg: ''
+        }
     },
     {
         name: 'Project 2',
-        description:
-            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.',
-        viewProjectLink: ''
-    },
-    {
-        name: 'Project 3',
-        description:
-            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.',
-        viewProjectLink: ''
-    },
-    {
-        name: 'Project 4',
-        description:
-            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.',
+        description: 'Coming soon! :D',
         viewProjectLink: ''
     }
 ];
@@ -31,16 +26,27 @@ const viewProjects = [
     {
         name: 'tastyfood',
         displayName: 'tasty food',
-        image: 'https://placehold.co/600x400',
-        imageWebp: null,
+        image: tastyFood,
+        imageWebp: {
+            sm: tastyFoodSMWebp,
+            lg: tastyFoodLGWebp
+        },
         badges: ['react', 'node js', 'mongodb', 'bootstrap', 'git', 'Amazon EC2', 'betterAuth', 'socket.io'],
         liveDemoLink: 'http://google.com',
         sourceCodeLink: 'http://google.com',
         overview: [
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolor commodi voluptate nam repudiandae neque fuga aut minima recusandae reiciendis, iure dolorem, ipsa, nulla tempora quam doloribus quaerat minus quis.',
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolor commodi voluptate nam repudiandae neque fuga aut minima recusandae reiciendis, iure dolorem, ipsa, nulla tempora quam doloribus quaerat minus quis.'
+            'Tasty Food is a full-stack web application that brings food enthusiasts together by allowing users to share their favorite recipes, discover new ones, and interact in real time. The platform focuses on community-driven engagement, where every recipe tells a story, and every cook can inspire others.',
+            'Tasty Food is more than just a recipe-sharing app — it’s a social platform for food lovers. By combining CRUD functionality, real-time communication, and interactive user features, it offers a dynamic environment where creativity and community meet.'
         ],
-        features: ['item', 'item', 'item', 'item', 'item', 'item']
+        features: [
+            'User authentication',
+            'update user account',
+            'Create and manage own recipes',
+            'Like, comment and rate other recipes',
+            'Search recipes',
+            'Rating notifications for your own recipes',
+            'Real time chat with other recipe authors'
+        ]
     }
 ];
 
