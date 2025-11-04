@@ -20,7 +20,6 @@ function Project({
                     </div>
                     <div className="card-body">
                         <h5 className="card-title text-primary">{name}</h5>
-
                         <p className="card-text">{description}</p>
                     </div>
                 </div>

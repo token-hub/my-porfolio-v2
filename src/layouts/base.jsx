@@ -6,14 +6,20 @@ import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
 
 function Base() {
-    const { hash } = useLocation();
+    const { hash, pathname } = useLocation();
+
     useEffect(() => {
+        sectionAnimation('hiddenAndPushedDown');
         if (hash) {
             const element = document.querySelector(hash);
             if (element) element.scrollIntoView({ behavior: 'smooth' });
+            return;
         }
-        sectionAnimation('hiddenAndPushedDown');
-    }, [hash]);
+
+        if (pathname) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [hash, pathname]);
 
     return (
         <>
