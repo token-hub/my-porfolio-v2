@@ -4,22 +4,26 @@ const projects = [
     {
         name: 'Tasty food',
         description:
-            'A web application where people can look and share recipes they like, and have a fun conversation with the author of recipe in real time.'
+            'A web application where people can look and share recipes they like, and have a fun conversation with the author of recipe in real time.',
+        viewProjectLink: '/tastyfood'
     },
     {
         name: 'Project 2',
         description:
-            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.'
+            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.',
+        viewProjectLink: ''
     },
     {
         name: 'Project 3',
         description:
-            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.'
+            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.',
+        viewProjectLink: ''
     },
     {
         name: 'Project 4',
         description:
-            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.'
+            'Wilsonport is a multiservice logistics and transport company and I created their website from scratch using the frontend tools I know.',
+        viewProjectLink: ''
     }
 ];
 
