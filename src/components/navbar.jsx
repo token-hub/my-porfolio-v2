@@ -1,10 +1,13 @@
 import { Link } from 'react-router';
 
 function Navbar() {
+    function handleHome() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow-sm fixed-top bg-white text-primary">
             <div className="container">
-                <Link to="/" className="w-bolder fs-5 m-0 text-decoration-none text-primary">
+                <Link to="/" onClick={handleHome} className="w-bolder fs-5 m-0 text-decoration-none text-primary">
                     &lt;JohnSuyang /&gt;
                 </Link>
                 <button
