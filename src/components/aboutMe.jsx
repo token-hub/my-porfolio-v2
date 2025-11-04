@@ -28,20 +28,20 @@ function AboutMe() {
                         <div className="d-flex h-100 flex-column">
                             <h4 className="bolder">Who am I ?</h4>
                             <p className="lead">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure repellat ipsum modi
-                                aliquam perspiciatis. Vel cumque aperiam cum quisquam numquam cupiditate voluptatibus,
-                                obcaecati, doloremque repellat quia assumenda tempore quos distinctio. Lorem ipsum dolor
-                                sit, amet consectetur adipisicing elit. Iure repellat ipsum modi aliquam perspiciatis.
-                                Vel cumque aperiam cum quisquam numquam cupiditate voluptatibus, obcaecati, doloremque
-                                repellat quia assumenda tempore quos distinctio.
+                                Hey there! I'm John Suyang, a passionate Full-Stack Web Developer from Philippines who
+                                loves creating web experiences that are clean, responsive, and enjoyable to use. I've
+                                worked on both the front-end and back-end. I enjoy solving problems, experimenting with
+                                new ideas, and finding smarter, cleaner ways to make things work. For me, writing code
+                                isn't just about functionality — it's about crafting something that feels good to use
+                                and even better to build
                             </p>
                             <p className="lead">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure repellat ipsum modi
-                                aliquam perspiciatis. Vel cumque aperiam cum quisquam numquam cupiditate voluptatibus,
-                                obcaecati, doloremque repellat quia assumenda tempore quos distinctio. Lorem ipsum dolor
-                                sit, amet consectetur adipisicing elit. Iure repellat ipsum modi aliquam perspiciatis.
-                                Vel cumque aperiam cum quisquam numquam cupiditate voluptatibus, obcaecati, doloremque
-                                repellat quia assumenda tempore quos distinctio.
+                                Outside of coding, I'm a lifelong learner who loves exploring new technologies. You’ll
+                                often find me watching YouTube tutorials, reading developer blogs, or taking courses on
+                                Udemy (yep, I'm making the most of that subscription 😄).I enjoy understanding how
+                                things work under the hood and applying what I learn to improve my projects. I'm always
+                                excited about things that make me grow as a developer and creating meaningful projects
+                                that make an impact in the real world.
                             </p>
                             <Link to={resume} download="JohnSuyangResume.pdf" target="_blank">
                                 <button className="btn btn-primary text-white w-100 mt-auto">Download Resume</button>
