@@ -32,8 +32,8 @@ const viewProjects = [
             lg: tastyFoodLGWebp
         },
         badges: ['react', 'node js', 'mongodb', 'bootstrap', 'git', 'Amazon EC2', 'betterAuth', 'socket.io'],
-        liveDemoLink: 'http://google.com',
-        sourceCodeLink: 'http://google.com',
+        liveDemoLink: 'https://tasty-food.johnsuyang.dev/',
+        sourceCodeLink: 'https://github.com/token-hub/tasty-food',
         overview: [
             'Tasty Food is a full-stack web application that brings food enthusiasts together by allowing users to share their favorite recipes, discover new ones, and interact in real time. The platform focuses on community-driven engagement, where every recipe tells a story, and every cook can inspire others.',
             'Tasty Food is more than just a recipe-sharing app — it’s a social platform for food lovers. By combining CRUD functionality, real-time communication, and interactive user features, it offers a dynamic environment where creativity and community meet.'
