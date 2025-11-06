@@ -1,9 +1,10 @@
-import { Form, useFetcher } from 'react-router';
+import { Form } from 'react-router';
+import { useEmailFetcher } from '../hooks/useEmailFetcher';
 
 function ContactMe() {
-    const fetcher = useFetcher();
-
+    const { fetcher } = useEmailFetcher();
     function handleSubmit(e) {
+        e.preventDefault();
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries());
         fetcher.submit(data, { method: 'POST', action: '/' });

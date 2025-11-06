@@ -4,6 +4,8 @@ import BackToTop from '../components/backToTop';
 import { sectionAnimation } from '../lib/animations';
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
+import ToastProvider from '../contexts/toastContext';
+import Toasts from '../components/toast/toasts';
 
 function Base() {
     const { hash, pathname } = useLocation();
@@ -29,10 +31,13 @@ function Base() {
 
     return (
         <>
-            <BackToTop />
-            <Navbar />
-            <Outlet />
-            <Footer />
+            <ToastProvider>
+                <Toasts />
+                <BackToTop />
+                <Navbar />
+                <Outlet />
+                <Footer />
+            </ToastProvider>
         </>
     );
 }
