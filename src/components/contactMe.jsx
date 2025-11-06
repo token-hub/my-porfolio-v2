@@ -1,4 +1,15 @@
+import { Form, useFetcher } from 'react-router';
+
 function ContactMe() {
+    const fetcher = useFetcher();
+
+    function handleSubmit(e) {
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+        fetcher.submit(data, { method: 'POST', action: '/' });
+        e.target.reset();
+    }
+
     return (
         <section id="contact-me" className="py-6 py-md-8 bg-white">
             <div className="container hiddenAndPushedDown">
@@ -22,12 +33,13 @@ function ContactMe() {
                 <div className="row justify-content-center">
                     <div className="col-md-8 col-lg-6">
                         <div className="bg-white p-5 rounded shadow">
-                            <form>
+                            <Form method="POST" onSubmit={handleSubmit}>
                                 <div className="mb-4">
                                     <label htmlFor="name" className="form-label">
                                         Name
                                     </label>
                                     <input
+                                        name="name"
                                         type="text"
                                         placeholder="Enter your name"
                                         className="form-control"
@@ -40,6 +52,7 @@ function ContactMe() {
                                         Email address
                                     </label>
                                     <input
+                                        name="emailAddress"
                                         type="email"
                                         placeholder="Enter your email"
                                         className="form-control"
@@ -52,6 +65,7 @@ function ContactMe() {
                                         Message
                                     </label>
                                     <textarea
+                                        name="message"
                                         placeholder="Your message"
                                         className="form-control"
                                         id="floatingTextarea2"
@@ -62,7 +76,7 @@ function ContactMe() {
                                 <button type="submit" className="btn btn-lg btn-primary text-white w-100 mt-auto">
                                     Submit
                                 </button>
-                            </form>
+                            </Form>
                         </div>
                     </div>
                 </div>

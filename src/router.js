@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router';
+import { sendEmailAction } from './actions/sendEmailAction';
 const router = createBrowserRouter([
     {
         lazy: {
@@ -9,7 +10,8 @@ const router = createBrowserRouter([
                 path: '/',
                 lazy: {
                     Component: async () => (await import('./pages/home')).default
-                }
+                },
+                action: sendEmailAction
             },
             {
                 path: '/:project',
