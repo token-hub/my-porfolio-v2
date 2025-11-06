@@ -9,7 +9,6 @@ export function useEmailFetcher() {
     useEffect(() => {
         if (fetcher.state === 'idle') {
             if (fetcher?.data?.error) {
-                alert(fetcher?.data?.error);
                 createToast({ headerText: 'Server Error', bodyText: fetcher?.data?.error, isSuccess: false });
             }
 
