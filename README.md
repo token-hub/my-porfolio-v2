@@ -2,6 +2,8 @@
 
 it is called v2 because the first one is only build using pure HTML,CSS/sass, and Javascript bundle with webpack.
 
+This application is using a email-server which is just a simple node js app. you can find it [here](https://github.com/token-hub/email-server).
+
 ## 🧰 Tech Stack
 
 React and Bootstrap
