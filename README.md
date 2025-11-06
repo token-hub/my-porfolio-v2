@@ -18,6 +18,10 @@ Nginx, AWS EC2
 git clone https://github.com/token-hub/my-porfolio-v2.git
 ```
 
+You will need to create a .env file as well and the content of it will be just a variable pointing to the email server
+
+VITE_SERVER_URL=http://localhost:3000
+
 ### 2. Install dependencies
 
 ```bash
